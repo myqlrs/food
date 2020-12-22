@@ -1,3 +1,6 @@
+/**
+ * 前端用户注册
+ */
 $(function () {
 
     var error_name = false;
@@ -6,23 +9,27 @@ $(function () {
     var error_email = false;
     var error_check = false;
 
-
+    //验证用户名
     $('#user_name').blur(function () {
         check_user_name();
     });
 
+    //验证密码
     $('#pwd').blur(function () {
         check_pwd();
     });
 
+    //验证确认密码
     $('#cpwd').blur(function () {
         check_cpwd();
     });
 
+    //验证邮箱
     $('#email').blur(function () {
         check_email();
     });
 
+    //验证是否同意相关协议
     $('#allow').click(function () {
         if ($(this).is(':checked')) {
             error_check = false;
@@ -89,7 +96,7 @@ $(function () {
 
     }
 
-
+    //提交
     $('#reg_form').submit(function () {
         check_user_name();
         check_pwd();
@@ -101,8 +108,5 @@ $(function () {
         } else {
             return false;
         }
-
     });
-
-
 })
