@@ -13,6 +13,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>校园点餐后台登陆</title>
 
+    <%--    书签--%>
+    <link rel="Bookmark" href="${pageContext.request.contextPath}/assets/images/favicon.ico" >
+    <%--    浏览器标题前的图标--%>
+    <link rel="Shortcut Icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" />
+
     <style type="text/css">
         *{padding:0px;margin:0px;}
         body{font-family:Arial, Helvetica, sans-serif;background:url(${pageContext.request.contextPath}/images/grass.jpg);font-size:12px;}
@@ -33,11 +38,10 @@
 
 <div class="lg">
 <%--    跳转到LoginController验证--%>
-    <form action="${pageContext.request.contextPath}/login" method="POST">
+    <form id="login" action="${pageContext.request.contextPath}/login" method="POST">
         <div class="lg_top"></div>
         <div class="lg_main">
             <div class="lg_m_1">
-                ${error}
                 <input name="name" id="name" placeholder="用户名" value="" class="ur" />
                 <input name="password" id="password" placeholder="密码" type="password" value="" class="pw" />
 
@@ -48,5 +52,14 @@
     </form>
 </div>
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
+<script type="text/javascript">
+    $(function () {
+        if('${error}'.length!=0){
+            layer.msg('${error}',);
+        }
+    });
+</script>
 </body>
 </html>

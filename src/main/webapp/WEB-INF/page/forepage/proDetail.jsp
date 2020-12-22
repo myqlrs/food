@@ -186,22 +186,20 @@
                             <!--=======  product description  =======-->
                             <div class="container">
                                 <div class="row">
-                                    <div class="product-description col-lg-6 col-md-6 col-xs-12">
+                                    <div class="col-lg-6 col-md-6 col-xs-12">
                                         <p>商家所在地：${product.user.address}</p>
                                         <p>价格：${product.price}</p>
                                         <p>人气：${product.zan}</p>
                                         <p>销量：${product.number}</p>
                                         <p>商品描述：${product.miaoshu}</p>
                                     </div>
-                                    <div id="dom" class="product-description col-lg-6 col-md-6 col-xs-12"
+                                    <div id="dom" class="col-lg-6 col-md-6 col-xs-12"
                                          style="width: 600px;height:300px;">
                                     </div>
                                 </div>
                             </div>
-
                             <!--=======  End of product description  =======-->
                         </div>
-
                         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                             <!--=======  review content  =======-->
                         <c:if test="${reviews.size()==0}">
@@ -448,30 +446,6 @@
 <script src="${pageContext.request.contextPath}/js/echarts.min.js"></script>
 <script type="text/javascript">
     $(function () {
-        var myChart = echarts.init(document.getElementById('dom'));
-
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: ''
-            },
-            tooltip: {},
-            legend: {
-                data:[]
-            },
-            xAxis: {
-                data: ["价格","人气","销量"]
-            },
-            yAxis: {},
-            series: [{
-                name: '值',
-                type: 'bar',
-                data: [${product.price}, ${product.zan}, ${product.number}]
-            }]
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
         $("div.loginErrorMessageDiv").hide();//隐藏小窗口登录框
         var number;
         //立即购买按钮
@@ -540,6 +514,29 @@
                 }
             );
         });
+        var myChart = echarts.init(document.getElementById('dom'),'light');
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: ''
+            },
+            tooltip: {},
+            legend: {
+                data:[]
+            },
+            xAxis: {
+                data: ["价格","人气","销量"]
+            },
+            yAxis: {},
+            series: [{
+                name: '值',
+                type: 'bar',
+                data: [${product.price}, ${product.zan}, ${product.number}]
+            }]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
     });
 </script>
 <!--=====  End of related product slider  ======-->
