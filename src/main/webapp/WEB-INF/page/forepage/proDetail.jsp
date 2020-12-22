@@ -120,7 +120,7 @@
                     </h2>
 
                     <p class="product-description mb-20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有食品已严格把关，无任何食品安全问题，价格公道，食品美味，
-                        值得拥有，你还在等什么，感觉给自己点上一份香喷喷的美食犒劳自己吧！
+                        值得拥有，你还在等什么，赶紧给自己点上一份香喷喷的美食犒劳自己吧！
                         <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;卖家承诺，如果有任何食品安全问题，无条件全额退款
                     </p>
 
@@ -181,18 +181,27 @@
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="product-description" role="tabpanel" aria-labelledby="description-tab">
+                        <div class="tab-pane fade show active" id="product-description" role="tabpanel"
+                             aria-labelledby="description-tab">
                             <!--=======  product description  =======-->
-                            <div class="product-description">
-                                <p>商家所在地：${product.user.address}</p>
-                                <p>人气：${product.zan}</p>
-                                <p>销量：${product.number}</p>
-                                <p>销量：${product.number}</p>
-                                <p>商品描述：${product.miaoshu}</p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="product-description col-lg-6 col-md-6 col-xs-12">
+                                        <p>商家所在地：${product.user.address}</p>
+                                        <p>价格：${product.price}</p>
+                                        <p>人气：${product.zan}</p>
+                                        <p>销量：${product.number}</p>
+                                        <p>商品描述：${product.miaoshu}</p>
+                                    </div>
+                                    <div id="dom" class="product-description col-lg-6 col-md-6 col-xs-12"
+                                         style="width: 600px;height:300px;">
+                                    </div>
+                                </div>
                             </div>
 
                             <!--=======  End of product description  =======-->
                         </div>
+
                         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                             <!--=======  review content  =======-->
                         <c:if test="${reviews.size()==0}">
@@ -354,7 +363,7 @@
                     <c:forEach items="${fivePro}" var="pf">
                     <div class="fl-product">
                         <div class="image">
-                            <a href="foreDetailUI?id=${pf.id}">
+                            <a href="${pageContext.request.contextPath}/fore/foreDetailUI?id=${pf.id}">
                                 <img src="${pageContext.request.contextPath}/${pf.imageurl}" class="img-fluid" alt="">
                                 <img src="${pageContext.request.contextPath}/${pf.imageurl}" class="img-fluid" alt="">
                             </a>
@@ -364,7 +373,7 @@
                                 </span>
                         </div>
                         <div class="content">
-                            <h2 class="product-title"> <a href="foreDetailUI?id=${pf.id}">${pf.name}</a></h2>
+                            <h2 class="product-title"> <a href="${pageContext.request.contextPath}/fore/foreDetailUI?id=${pf.id}">${pf.name}</a></h2>
                             <div class="rating">
                                 <i class="fa fa-star active"></i>
                                 <i class="fa fa-star active"></i>
@@ -435,8 +444,34 @@
     </div>
 </div>
 <script src="${pageContext.request.contextPath}/js/jquery/2.0.0/jquery.min.js"></script>
+<!-- 引入 ECharts 文件 -->
+<script src="${pageContext.request.contextPath}/js/echarts.min.js"></script>
 <script type="text/javascript">
     $(function () {
+        var myChart = echarts.init(document.getElementById('dom'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: ''
+            },
+            tooltip: {},
+            legend: {
+                data:[]
+            },
+            xAxis: {
+                data: ["价格","人气","销量"]
+            },
+            yAxis: {},
+            series: [{
+                name: '值',
+                type: 'bar',
+                data: [${product.price}, ${product.zan}, ${product.number}]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
         $("div.loginErrorMessageDiv").hide();//隐藏小窗口登录框
         var number;
         //立即购买按钮
@@ -505,7 +540,6 @@
                 }
             );
         });
-
     });
 </script>
 <!--=====  End of related product slider  ======-->

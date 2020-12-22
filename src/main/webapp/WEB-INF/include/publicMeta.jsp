@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/Hui-iconfont/1.0.8/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/h-ui.admin/skin/default/skin.css" id="skin" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/h-ui.admin/css/style.css" />
+    <!-- 引入 ECharts 文件 -->
+    <script src="${pageContext.request.contextPath}/js/echarts.min.js"></script>
     <!--/meta 作为公共模版分离出去-->
     <title>点餐平台后台</title>
 </head>

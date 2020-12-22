@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryExample {
+    //按条件排序
     protected String orderByClause;
 
+    //去重
     protected boolean distinct;
 
+    //sql集合
     protected List<Criteria> oredCriteria;
 
     public CategoryExample() {
@@ -52,6 +55,7 @@ public class CategoryExample {
         return criteria;
     }
 
+    //创建标准sql对象
     protected Criteria createCriteriaInternal() {
         Criteria criteria = new Criteria();
         return criteria;
@@ -63,6 +67,7 @@ public class CategoryExample {
         distinct = false;
     }
 
+    //标准sql语句
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
 

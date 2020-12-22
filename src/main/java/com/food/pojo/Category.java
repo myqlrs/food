@@ -1,10 +1,9 @@
 package com.food.pojo;
+
+import java.util.List;
 /**
  * 分类信息
  */
-
-import java.util.List;
-
 public class Category {
     private Integer id;//分类id
 
