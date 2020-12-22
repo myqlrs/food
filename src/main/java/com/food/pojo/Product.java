@@ -1,29 +1,32 @@
 package com.food.pojo;
 
+/**
+ * 商品信息
+ */
 public class Product {
-    private Integer id;
+    private Integer id;//商品id
 
-    private String name;
+    private String name;//商品名称
 
-    private Float price;
+    private Float price;//商品价格
 
-    private Integer zan;
+    private Integer zan;//商品赞的数量
 
-    private Integer number;
+    private Integer number;//商品销量
 
-    private Integer status;
+    private Integer status;//商品状态（0:下线 1:上线）
 
-    private String imageurl;
+    private String imageurl;//商品对应图片的保存地址
 
-    private String miaoshu;
+    private String miaoshu;//商品描述
 
-    private Integer cid;
+    private Integer cid;//商品所属分类id
 
-    private Long bid;
+    private Long bid;//商品所属商家id
 
-    //
-    private Category category;
-    private User user;
+    //增加
+    private Category category;//存储分类信息
+    private User user;//存储商家信息
 
     public Category getCategory() {
         return category;

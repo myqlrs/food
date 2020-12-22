@@ -1,11 +1,14 @@
 package com.food.pojo;
 
+/**
+ * 给管理员赋予某个角色
+ */
 public class UserRole {
-    private Long id;
+    private Long id;//管理员角色id
 
-    private Long uid;
+    private Long uid;//管理员id
 
-    private Long rid;
+    private Long rid;//角色id
 
     public Long getId() {
         return id;

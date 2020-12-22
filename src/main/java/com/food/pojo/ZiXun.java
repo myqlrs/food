@@ -2,6 +2,9 @@ package com.food.pojo;
 
 import java.util.Date;
 
+/**
+ * 资讯信息
+ */
 public class ZiXun {
     private Integer id;//资讯id
 

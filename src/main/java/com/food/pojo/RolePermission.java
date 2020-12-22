@@ -1,11 +1,14 @@
 package com.food.pojo;
 
+/**
+ * 给角色赋予某些权限
+ */
 public class RolePermission {
-    private Long id;
+    private Long id;//角色权限id
 
-    private Long rid;
+    private Long rid;//角色id
 
-    private Long pid;
+    private Long pid;//权限id
 
     public Long getId() {
         return id;

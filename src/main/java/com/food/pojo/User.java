@@ -2,22 +2,25 @@ package com.food.pojo;
 
 import java.util.Date;
 
+/**
+ * 管理员信息
+ */
 public class User {
-    private Long id;
+    private Long id;//管理员(商家)id
 
-    private String name;
+    private String name;//管理员名称
 
-    private String password;
+    private String password;//管理员密码
 
-    private String salt;
+    private String salt;//盐(用于给密码加密)
 
-    private Integer status;
+    private Integer status;//z状态(0:停用 1:启用)
 
-    private String address;
+    private String address;//地址
 
-    private String phone;
+    private String phone;//电话
 
-    private Date lasttime;
+    private Date lasttime;//最后登录时间
 
     public Long getId() {
         return id;

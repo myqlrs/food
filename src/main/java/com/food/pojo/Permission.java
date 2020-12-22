@@ -1,13 +1,16 @@
 package com.food.pojo;
 
+/**
+ * 权限信息
+ */
 public class Permission {
-    private Long id;
+    private Long id;//权限id
 
-    private String name;
+    private String name;//权限名
 
-    private String desc_;
+    private String desc_;//权限描述
 
-    private String url;
+    private String url;//权限url访问路径
 
     public Long getId() {
         return id;

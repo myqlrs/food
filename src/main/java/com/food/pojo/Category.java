@@ -1,4 +1,7 @@
 package com.food.pojo;
+/**
+ * 分类信息
+ */
 
 import java.util.List;
 

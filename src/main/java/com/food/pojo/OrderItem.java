@@ -1,5 +1,8 @@
 package com.food.pojo;
 
+/**
+ * 订单项信息(订单的每一件商品的信息)
+ */
 public class OrderItem {
     private Integer id;//订单项
 

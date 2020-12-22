@@ -2,6 +2,9 @@ package com.food.pojo;
 
 import java.util.Date;
 
+/**
+ * 评论信息
+ */
 public class Review {
     private Integer id;//评论id
 

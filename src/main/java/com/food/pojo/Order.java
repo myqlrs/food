@@ -2,6 +2,9 @@ package com.food.pojo;
 
 import java.util.List;
 
+/**
+ * 订单信息
+ */
 public class Order {
     private Integer id;//订单id
 

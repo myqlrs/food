@@ -1,11 +1,14 @@
 package com.food.pojo;
 
+/**
+ * 角色信息
+ */
 public class Role {
-    private Long id;
+    private Long id;//角色id
 
-    private String name;
+    private String name;//角色名
 
-    private String desc_;
+    private String desc_;//角色描述
 
     public Long getId() {
         return id;

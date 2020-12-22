@@ -1,5 +1,8 @@
 package com.food.pojo;
 
+/**
+ * 消费者信息
+ */
 public class Customer {
     private Integer id;//用户id（消费者）
 
