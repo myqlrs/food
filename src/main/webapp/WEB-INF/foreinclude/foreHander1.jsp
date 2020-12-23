@@ -40,9 +40,6 @@
     <!-- Main CSS -->
     <link href="${pageContext.request.contextPath}/assets/css/main.css" rel="stylesheet">
 
-    <!-- Modernizer JS -->
-    <script src="${pageContext.request.contextPath}/assets/js/vendor/modernizr-2.8.3.min.js"></script>
-
 </head>
 
 <body class="grey-bg">
