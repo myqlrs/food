@@ -92,15 +92,24 @@
                                 </a>
                             </div>
                             <span class="separator pl-15 pr-15">|</span>
+                            <div class="image">
+                                <i class="icon ion-md-log-out"></i>
+                            </div>
                             <div class="single-dropdown">
                                 <a href="${pageContext.request.contextPath}/fore/foreCstLoginOut"><span>退出</span></a>
                             </div>
                         </c:if>
                         <c:if test="${cst==null}">
+                            <div class="image">
+                                <i class="icon ion-md-log-in"></i>
+                            </div>
                             <div class="single-dropdown">
                                 <a href="${pageContext.request.contextPath}/fore/foreLoginUI"><span>登陆</span></a>
                             </div>
                             <span class="separator pl-15 pr-15">|</span>
+                            <div class="image">
+                                <i class="icon ion-md-log-in"></i>
+                            </div>
                             <div class="single-dropdown">
                                 <a href="${pageContext.request.contextPath}/fore/foreRegisterUI"><span>注册</span></a>
                             </div>
@@ -147,7 +156,7 @@
 
                         <div class="single-feature d-flex">
                             <div class="image">
-                                <i class="icon ion-md-globe"></i>
+                                <i class="icon ion-md-navigate"></i>
                             </div>
                             <div class="content">
                                 <h5>免费送货</h5>
@@ -173,7 +182,7 @@
 
                         <div class="single-feature d-flex mb-sm-0">
                             <div class="image">
-                                <i class="icon ion-md-notifications-outline"></i>
+                                <i class="icon ion-md-clock"></i>
                             </div>
                             <div class="content">
                                 <h5>会员折扣</h5>
