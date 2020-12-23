@@ -57,7 +57,9 @@
 <script type="text/javascript">
     $(function () {
         if('${error}'.length!=0){
-            layer.msg('${error}',);
+            layer.msg('${error}',function () {
+                
+            });
         }
     });
 </script>
