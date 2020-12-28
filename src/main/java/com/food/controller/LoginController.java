@@ -28,7 +28,7 @@ public class LoginController {
     UserService userService;
 
     @RequestMapping(value="/login",method= RequestMethod.POST)
-    public String login(Model model, String name, String password){//throws ParseException
+    public String login(Model model, String name, String password){
         //获取当前登录用户
         Subject subject = SecurityUtils.getSubject();
         //封装用户登录的数据

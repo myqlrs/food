@@ -1141,106 +1141,151 @@ SELECT|sys.sys_config:null
       <Position>3</Position>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <key id="323" parent="252" name="PRIMARY">
+    <index id="323" parent="252" name="roid">
+      <ColNames>rid</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="324" parent="252" name="peid">
+      <ColNames>pid</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="325" parent="252" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="324" parent="253" name="id">
+    <foreign-key id="326" parent="252" name="roid">
+      <ColNames>rid</ColNames>
+      <RefTableName>role</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="327" parent="252" name="peid">
+      <ColNames>pid</ColNames>
+      <RefTableName>permission</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="328" parent="253" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="325" parent="253" name="name">
+    <column id="329" parent="253" name="name">
       <Position>2</Position>
       <Comment>管理员姓名</Comment>
       <DataType>varchar(100)|0s</DataType>
     </column>
-    <column id="326" parent="253" name="password">
+    <column id="330" parent="253" name="password">
       <Position>3</Position>
       <Comment>管理员密码</Comment>
       <DataType>varchar(100)|0s</DataType>
     </column>
-    <column id="327" parent="253" name="salt">
+    <column id="331" parent="253" name="salt">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
     </column>
-    <column id="328" parent="253" name="status">
+    <column id="332" parent="253" name="status">
       <Position>5</Position>
       <Comment>状态，1：启用，0：停用</Comment>
       <DataType>int(10)|0s</DataType>
     </column>
-    <column id="329" parent="253" name="address">
+    <column id="333" parent="253" name="address">
       <Position>6</Position>
       <Comment>商家管理员地址</Comment>
       <DataType>varchar(100)|0s</DataType>
       <DefaultExpression>&apos;暂无&apos;</DefaultExpression>
     </column>
-    <column id="330" parent="253" name="phone">
+    <column id="334" parent="253" name="phone">
       <Position>7</Position>
       <DataType>varchar(50)|0s</DataType>
     </column>
-    <column id="331" parent="253" name="lasttime">
+    <column id="335" parent="253" name="lasttime">
       <Position>8</Position>
       <Comment>最后登陆时间</Comment>
       <DataType>datetime|0s</DataType>
     </column>
-    <key id="332" parent="253" name="PRIMARY">
+    <key id="336" parent="253" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="333" parent="254" name="id">
+    <column id="337" parent="254" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="334" parent="254" name="uid">
+    <column id="338" parent="254" name="uid">
       <Position>2</Position>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <column id="335" parent="254" name="rid">
+    <column id="339" parent="254" name="rid">
       <Position>3</Position>
       <DataType>bigint(20)|0s</DataType>
     </column>
-    <key id="336" parent="254" name="PRIMARY">
+    <index id="340" parent="254" name="uid">
+      <ColNames>uid</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="341" parent="254" name="rid">
+      <ColNames>rid</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="342" parent="254" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="337" parent="255" name="id">
+    <foreign-key id="343" parent="254" name="uid">
+      <ColNames>uid</ColNames>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="344" parent="254" name="rid">
+      <ColNames>rid</ColNames>
+      <RefTableName>role</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="345" parent="255" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="338" parent="255" name="content">
+    <column id="346" parent="255" name="content">
       <Position>2</Position>
       <Comment>资讯内容</Comment>
       <DataType>varchar(1000)|0s</DataType>
     </column>
-    <column id="339" parent="255" name="cstid">
+    <column id="347" parent="255" name="cstid">
       <Position>3</Position>
       <Comment>客户id</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="340" parent="255" name="status">
+    <column id="348" parent="255" name="status">
       <Position>4</Position>
       <Comment>审核状态，1：通过，0：未通过;</Comment>
       <DataType>int(255)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <column id="341" parent="255" name="fabudate">
+    <column id="349" parent="255" name="fabudate">
       <Position>5</Position>
       <Comment>发布时间;</Comment>
       <DataType>datetime|0s</DataType>
     </column>
-    <key id="342" parent="255" name="PRIMARY">
+    <index id="350" parent="255" name="cstid">
+      <ColNames>cstid</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="351" parent="255" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="352" parent="255" name="cstid">
+      <ColNames>cstid</ColNames>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

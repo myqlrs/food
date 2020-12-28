@@ -50,9 +50,8 @@ public class ForeController {
      */
     @RequestMapping("/foreIndex")
     public String index(Model model, HttpSession session){
-        //传入3个分类
-        List<Category> categories = foreService.listToThree();
-        List<Category> categories1 = categoryService.list();
+        //传入6个分类
+        List<Category> categories = categoryService.list();
         //给每个分类设置商品
         for (Category c:categories){
             List<Product> products = productService.getProductsByCid(c.getId());
@@ -68,7 +67,8 @@ public class ForeController {
             }
         }
         model.addAttribute("categories",categories);
-        session.setAttribute("categories",categories1); //保存在session  使其他页面也能获取到分类列表 而不用每次都去查询
+        //保存在session  使其他页面也能获取到分类列表 而不用每次都去查询
+        session.setAttribute("categories",categories);
         return "forepage/index";//前端首页
     }
 
@@ -185,7 +185,6 @@ public class ForeController {
             return "false";
         }
         Product p = productService.get(pid);
-
         boolean found = false;
         //获得订单项表中该用户的所有订单id为空的订单项
         List<OrderItem> ois = orderItemService.listByCustomer(customer.getId());
@@ -212,7 +211,7 @@ public class ForeController {
     }
 
     /**
-     * 查看购物车购物车
+     * 查看购物车
      * @param model
      * @param session
      * @return
@@ -544,20 +543,16 @@ public class ForeController {
         Product product = productService.get(id);
         //如果没有该商品跳转到无商品页面
         if(product==null) return "forepage/noPro";
-
         //获取该商品所属商家
         User user = productService.getUserByBid(product.getBid());
         //获取该商品的分类
         Category category = productService.getCategoryByCid(product.getCid());
         product.setCategory(category);
         product.setUser(user);
-
         List<Product> fivePro = foreService.getFivePro();
-
         //将该商品的信息和随机获取的5个商品封装
         model.addAttribute("product",product);
         model.addAttribute("fivePro",fivePro);
-
         List<Review> list = reviewService.getReviewListByPid(id);
         //将该商品的评论和评论数量封装
         model.addAttribute("reviews",list);

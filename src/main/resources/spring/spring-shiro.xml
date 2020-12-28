@@ -89,7 +89,7 @@
     <!-- 安全管理器 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
        <!-- <property name="realm" ref="databaseRealm" />-->
-        <!-- 配置多个Realm -->
+        <!-- 可配置多个Realm -->
         <property name="realms">
             <list>
                 <ref bean="admindatabaseRealm" />

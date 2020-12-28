@@ -31,8 +31,8 @@ public class AdminDatabaseRealm extends AuthorizingRealm {
         //能进入到这里，表示账号已经通过验证了
         String userName =(String) principalCollection.getPrimaryPrincipal();
         //通过service获取角色和权限
-        Set<String> permissions = permissionService.listPermissions(userName);
         Set<String> roles = roleService.listRoleNames(userName);
+        Set<String> permissions = permissionService.listPermissions(userName);
 
         //授权对象
         SimpleAuthorizationInfo s = new SimpleAuthorizationInfo();

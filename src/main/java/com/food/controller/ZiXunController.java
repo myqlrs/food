@@ -16,6 +16,7 @@ import java.util.List;
 /**
  * @author 孟赟强
  * @date 2020/12/20-16:29
+ * 资讯模块
  */
 @Controller
 @RequestMapping("/zixun")

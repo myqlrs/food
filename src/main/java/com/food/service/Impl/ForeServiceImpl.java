@@ -18,7 +18,7 @@ public class ForeServiceImpl implements ForeService {
     private ProductMapper productMapper;
 
     @Override
-    public List<Category> listToThree() {
+    public List<Category> listToSix() {
         CategoryExample example = new CategoryExample();
         example.createCriteria().andIdBetween(1,6); //从1开始计数
         List<Category> categories = categoryMapper.selectByExample(example);
